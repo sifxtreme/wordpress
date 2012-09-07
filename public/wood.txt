@@ -1,0 +1,84 @@
+jQuery Functions
+
+Video 1,2,3 - Fade, Slide, Show, Hide, Animate
+
+$('#box').fadeOut('slow');
+fadeOut - Slowly fades out...replace slow with 'fast' (600ms) or 'normal' (400ms)
+slideUp - Think of a curtain
+hide - Slowly decrease height and width / Big square to small square
+show - Opposite of hide
+fadeIn - Opposite of fadeOut
+slideDown - Opposite of slideUp
+
+$('p a').css('color','blue');
+Select all paragraph anchor tags and change their color to blue
+
+$('#box').click(function(){
+	$(this).animate({
+		"left":"300px",
+		"top":"100px",
+	}, 'slow');
+	$(this).animate({
+		'width':'50px'
+	});
+})
+Makes the box move right and to the bottom. Note the 4000 is at the end!
+Once it moves the box, it will then change the width of the box.
+
+Video 4,5 - Advanced Selectors, Adding/Removing List Items
+
+$('li:odd').addClass('alert');
+$('li:nth-child(4)').addClass('alert'); // $('li:eq(3)').addClass('alert');
+Select odd list items or the 4th list item and change its CSS class to alert
+$('li a[title=title]').addClass('alert');
+Select list item whose anchor tag's title is title and change CSS class
+$('li>a').addClass('alert');
+Select all anchor tags within list items and change CSS class
+
+	var i= $('#second li').size();
+	console.log(i);
+	$('a#add').click(function(){
+		i++;
+		$('<li>' + i + '</li>').appendTo('ul#second');
+	});
+	$('a#remove').click(function(){
+		i--;
+		if(i<1){
+			i=0;
+		}
+		$('#second li:last').remove();
+	});
+Add and remove list items to the second unordered list
+
+--
+
+Video 6 - Toggle
+
+//$('#box').toggle(2000);
+$('#box').toggleClass('border');
+
+Toggle the div with id 'box' (to show or to not show) 
+Toggle the element with id 'box' to have the class border.
+
+Video 7 - Hover
+
+$('#container img').animate({"opacity": .5 }); 
+
+Make opacity .5 when page loads
+
+$('#container img').animate({"opacity": .5 });
+$('#container img').hover(function() {
+	$(this).stop().animate({ "opacity": 1 });
+}, function() {
+	$(this).stop().animate({ "opacity": .5 });
+});
+On hover animate to full opacity. When you hover off return to .5 opacity. The stop function is too take care of quick hover on/off and tells the animation to stop whatever it was doing (or is built up in its queue) and do the specified animation instead. 
+
+Video 8 - Image Slides
+
+Video 9 - Resizing Text
+
+$('p').css('font-size')
+Gets the font size of paragraph
+$('p').css('font-size','30px')
+Sets the font size of paragraph

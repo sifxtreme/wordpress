@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<head>
+	<script src="jquery-1.8.0.min.js" type="text/javascript"></script>
+	<style type="text/css">
+	#box{
+		width: 200px;
+		height: 200px;
+		background: red;
+	}
+	.border{
+		border: 5px solid black;
+	}
+	.highlight{
+		background: yellow;
+	}
+	</style>
+
+<script type="text/javascript">
+	$(function() {
+		$('a').click(function() {
+			//$('#box').toggle(2000);
+			$('#box').toggleClass('border');
+		});
+		$('p').click(function() {
+			$(this).toggleClass('highlight');
+		});
+	});
+</script>
+</head>
+
+<body>
+
+<div id="box"></div>
+<a href="#">Click Me</a>
+
+<p>This is a paragraph block</a>
+<p>This is a paragraph block</a>
+<p>This is a paragraph block</a>
+
+</body>
+</html>
