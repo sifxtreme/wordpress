@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<head>
+    <script src="jquery-1.8.0.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+
+        $(function() {
+            $('#container img').animate({"opacity": .5 });
+
+            $('#container img').hover(function() {
+                $(this).stop().animate({ "opacity": 1 });
+            }, function() {
+                $(this).stop().animate({ "opacity": .5 });
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div id="container">
+        <img src="1.jpg" alt="image" />
+        <img src="2.jpg" alt="image" />
+        <img src="3.jpg" alt="image" />
+        <img src="4.jpg" alt="image" />
+        <img src="5.jpg" alt="image" />
+    </div>
+</body>
+</html>
+
